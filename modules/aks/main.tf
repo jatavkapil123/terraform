@@ -16,6 +16,8 @@ resource "azurerm_kubernetes_cluster" "aks" {
     vm_size    = var.vm_size
   }
 
+  node_resource_group = "${var.cluster_name}-nodes-rg"
+
   identity {
     type = "SystemAssigned"
   }
